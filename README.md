@@ -1,6 +1,6 @@
 # 🎬 Movie Revenue Prediction
 
-Predicting movie box office revenue based on metadata such as budget, genres, cast, and release date using machine learning.
+Predicting movie box office revenue based on movie metadata (WIP).
 
 ---
 
