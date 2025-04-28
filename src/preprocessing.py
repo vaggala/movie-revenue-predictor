@@ -13,7 +13,7 @@ def get_sentiment(text):
     try:
         if not isinstance(text, str) or len(text.strip()) == 0: # just checks if the text is a non-valid empty string
             return 0
-        inputs = tokenizer(text, return_tensors = "pt", truncation = True) # retruns text as pytorch tensors so model can understand text, also cuts down text if too long so model doesn't crash
+        inputs = tokenizer(text, return_tensors = "pt", truncation = True, max_length = 512) # returns text as pytorch tensors so model can understand text, also cuts down text if too long so model doesn't crash
         outputs = model(**inputs) ## '**' just take each key value from the dictionary (inputs) as a separate named input for the model
         probs = torch.nn.functional.softmax(outputs.logits, dim=1) # logits are raw scores that will get turned into probabilities. logits are random big numbers and softmaxxing turns them into probabilities that add up to 1
         # probs: [negative, neutral, positive]
