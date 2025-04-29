@@ -12,8 +12,7 @@ def main():
     
     model, X_test, y_test, y_pred = train_model(processed_df)
     
-    metrics = evaluate_model(y_test, y_pred, undoLog=True)
+    metrics = evaluate_model(y_test, y_pred, undo_log=True)
     
 if __name__ == "__main__":
     main()
-    
