@@ -2,6 +2,8 @@ import pandas as pd
 from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestRegressor
 
+import joblib
+
 ## train_test_split allows us to test accuracy of model on data already available
 
 ## randomforestregressor is the actual ML model
@@ -15,6 +17,8 @@ def train_model(df):
     
     model = RandomForestRegressor(n_estimators = 150, random_state=1)  # i read 100-300 trees is a good number to use for a dataset of 5000 movies so i chose 150 for n_predictors 
     model.fit(X_train, y_train)
+    
+    joblib.dump(model, "models/movie_revenue_model.joblib")
     
     y_predicted = model.predict(X_test)
 
