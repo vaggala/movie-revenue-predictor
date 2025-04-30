@@ -17,7 +17,7 @@ def plot_actual_vs_predicted(y_true, y_pred, undo_log=True, save_path=None):
     
     if save_path:
         plt.savefig(save_path, bbox_inches='tight')
-        print(f"✅ Plot saved to {save_path}")
+        print(f"Plot saved to {save_path}")
     plt.show()
     
 def plot_feature_importance(model, feature_names, save_path=None):
@@ -32,5 +32,5 @@ def plot_feature_importance(model, feature_names, save_path=None):
 
     if save_path:
         plt.savefig(save_path, bbox_inches='tight')
-        print(f"✅ Plot saved to {save_path}")
+        print(f"Plot saved to {save_path}")
     plt.show()
